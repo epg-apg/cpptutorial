@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <climits>
 
 int main()
 {
@@ -40,6 +41,22 @@ int main()
     int inputNo;
     std::cin >> inputNo;
     std::cout << "You entered: " << inputNo << std::endl;
+
+    // integer variables
+    int willnotwork = 12147483647;
+    std::cout << "Will not work: " << willnotwork << std::endl;
+    std::cout << "Max int value: " << INT_MAX << std::endl;    
+    std::cout << "Min int value: " << INT_MIN << std::endl;    
+
+    long long int willwork = 12147483647;
+    std::cout << "Will work: " << willwork << std::endl;
+    std::cout << "Max long long int value: " << __LONG_LONG_MAX__ << std::endl;
+
+    std::cout << "Sizeof(int): " << sizeof(int) << std::endl;
+    std::cout << "Sizeof(short int): " << sizeof(short int) << std::endl;
+
+    unsigned int myuint = 123;
+    int myint = 123;
 
     return 0;
 }
