@@ -8,7 +8,7 @@ int main()
     // integer
     int numberVar = 123;
     int numberNew = 456;
-    int both = numberVar + numberNew;
+    int both      = numberVar + numberNew;
 
     std::cout << "Hello " << numberVar << std::endl;
     std::cout << "New " << numberNew << std::endl;
@@ -57,7 +57,7 @@ int main()
     std::cout << "Sizeof(short int): " << sizeof(short int) << std::endl;
 
     unsigned int myuint = 123;
-    int myint = 123;
+    int myint           = 123;
 
     // floating point
     float myfloat = 76.4;
@@ -124,6 +124,32 @@ int main()
     else
     {
         std::cout << "Okay!" << std::endl;
+    }
+
+    // if-else-if syntax
+    if (menuselection == 1)
+    {
+        std::cout << "Add!" << std::endl;
+    }
+    else if (menuselection == 2)
+    {
+        std::cout << "Delete!" << std::endl;
+    }
+    else if (menuselection == 3)
+    {
+        std::cout << "View!" << std::endl;
+    }
+    else if (menuselection == 4)
+    {
+        std::cout << "Search!" << std::endl;
+    }
+    else if (menuselection == 5)
+    {
+        std::cout << "Quit!" << std::endl;
+    }
+    else
+    {
+        std::cout << "Invalid!" << std::endl;
     }
 
     return 0;
