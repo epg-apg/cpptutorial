@@ -31,14 +31,14 @@ int main()
 
     // string input
     std::cout << "Enter your name: " << std::flush;
-    
+
     // std::string input;
     // std::cin >> input;
     // std::cout << "You entered: " << input << std::endl;
 
     // numeric input
     std::cout << "Enter a number: " << std::flush;
-    
+
     // int inputNo;
     // std::cin >> inputNo;
     // std::cout << "You entered: " << inputNo << std::endl;
@@ -46,8 +46,8 @@ int main()
     // integer variables
     int willnotwork = 12147483647;
     std::cout << "Will not work: " << willnotwork << std::endl;
-    std::cout << "Max int value: " << INT_MAX << std::endl;    
-    std::cout << "Min int value: " << INT_MIN << std::endl;    
+    std::cout << "Max int value: " << INT_MAX << std::endl;
+    std::cout << "Min int value: " << INT_MIN << std::endl;
 
     long long int willwork = 12147483647;
     std::cout << "Will work: " << willwork << std::endl;
@@ -88,6 +88,43 @@ int main()
 
     wchar_t wValue = 'i';
     std::cout << "WChar: " << wValue << std::endl;
+
+    // if syntax
+    std::string password = "hello";
+    std::cout << "Enter password: " << std::flush;
+
+    std::string mypassword = "";
+    // std::cin >> mypassword;
+
+    if (password == mypassword)
+    {
+        std::cout << "Match!" << std::endl;
+    }
+    if (password != mypassword)
+    {
+        std::cout << "No match!" << std::endl;
+    }
+
+    // if-else syntax
+    std::cout << "1.\tAdd new record" << std::endl;
+    std::cout << "2.\tDelete record" << std::endl;
+    std::cout << "3.\tView record" << std::endl;
+    std::cout << "4.\tSearch record" << std::endl;
+    std::cout << "5.\tQuit" << std::endl;
+
+    std::cout << "Enter your selection: " << std::flush;
+
+    int menuselection;
+    std::cin >> menuselection;
+
+    if (menuselection < 3)
+    {
+        std::cout << "Nope!" << std::endl;
+    }
+    else
+    {
+        std::cout << "Okay!" << std::endl;
+    }
 
     return 0;
 }
