@@ -173,5 +173,44 @@ int main()
         std::cout << "Not 1.1! " << std::setprecision(10) << fval1 << std::endl;
     }
 
+    int ival1 = 7;
+    int ival2 = 4;
+
+    if (ival1 > 8)
+    {
+        std::cout << "Cond1 true" << std::endl;
+    }
+    else
+    {
+        std::cout << "Cond1 false" << std::endl;
+    }
+
+    if (ival1 > 8 && ival2 < 3) // && || ... avoid !=
+    {
+        std::cout << "Cond2 true" << std::endl;
+    }
+    else
+    {
+        std::cout << "Cond2 false" << std::endl;
+    }
+
+    if (ival1 > 8 && ival2 < 3 || ival1 < 10) // use brackets
+    {
+        std::cout << "Cond3 true" << std::endl;
+    }
+    else
+    {
+        std::cout << "Cond3 false" << std::endl;
+    }
+
+    // saving condition
+    bool condition1 = (ival1 > 8 && ival2 < 3);
+    bool condition2 = (ival1 < 10);
+
+    if(condition1 || condition2)
+    {
+        std::cout << "Cond4 true" << std::endl;
+    }
+
     return 0;
 }
