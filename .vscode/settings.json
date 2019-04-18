@@ -33,5 +33,6 @@
         "type_traits": "cpp",
         "typeinfo": "cpp",
         "utility": "cpp"
-    }
+    },
+    "svn.ignoreMissingSvnWarning": true
 }
