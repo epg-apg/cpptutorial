@@ -115,7 +115,7 @@ int main()
     std::cout << "Enter your selection: " << std::flush;
 
     int menuselection;
-    std::cin >> menuselection;
+    // std::cin >> menuselection;
 
     if (menuselection < 3)
     {
@@ -150,6 +150,27 @@ int main()
     else
     {
         std::cout << "Invalid!" << std::endl;
+    }
+
+    // compare float and double
+    float fval1 = 1.1;
+
+    if (fval1 == 1.1) // wrong version
+    {
+        std::cout << "1.1!" << std::endl;
+    }
+    else
+    {
+        std::cout << "Not 1.1! " << std::setprecision(10) << fval1 << std::endl;
+    }
+
+    if (fval1 < 1.11) // right version
+    {
+        std::cout << "1.1!" << std::endl;
+    }
+    else
+    {
+        std::cout << "Not 1.1! " << std::setprecision(10) << fval1 << std::endl;
     }
 
     return 0;
