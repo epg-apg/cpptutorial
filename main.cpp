@@ -207,10 +207,31 @@ int main()
     bool condition1 = (ival1 > 8 && ival2 < 3);
     bool condition2 = (ival1 < 10);
 
-    if(condition1 || condition2)
+    if (condition1 || condition2)
     {
         std::cout << "Cond4 true" << std::endl;
     }
+
+    // loops
+    int lcounter = 0;
+    while (lcounter < 5)
+    {
+        std::cout << "Line " << lcounter << std::endl;
+        lcounter++;
+    }
+
+    const std::string looppassword = "hello"; // const    
+    std::string loopinput;
+
+    do
+    {
+        std::cout << "Enter password: " << std::flush;
+        std::cin >> loopinput;
+        if(loopinput != looppassword)
+        {
+            std::cout << "Denied." << std::endl;
+        }
+    } while (loopinput != looppassword);
 
     return 0;
 }
