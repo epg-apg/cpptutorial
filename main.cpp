@@ -236,6 +236,20 @@ int main()
     for(int i = 0;i < 10;++i)
     {
         std::cout << "Hello " << i << std::endl;
+        if(i==3)
+        {
+            break;
+        }
+    }
+
+    for(int i = 0;i < 10;++i)
+    {
+        std::cout << "Hello " << i << std::endl;
+        if(i==3)
+        {
+            continue;
+        }
+        std::cout << "looping... " << std::endl;
     }
 
     return 0;
