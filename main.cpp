@@ -223,15 +223,20 @@ int main()
     const std::string looppassword = "hello"; // const    
     std::string loopinput;
 
-    do
+    // do
+    // {
+    //     std::cout << "Enter password: " << std::flush;
+    //     std::cin >> loopinput;
+    //     if(loopinput != looppassword)
+    //     {
+    //         std::cout << "Denied." << std::endl;
+    //     }
+    // } while (loopinput != looppassword);
+
+    for(int i = 0;i < 10;++i)
     {
-        std::cout << "Enter password: " << std::flush;
-        std::cin >> loopinput;
-        if(loopinput != looppassword)
-        {
-            std::cout << "Denied." << std::endl;
-        }
-    } while (loopinput != looppassword);
+        std::cout << "Hello " << i << std::endl;
+    }
 
     return 0;
 }
