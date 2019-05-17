@@ -252,5 +252,24 @@ int main()
         std::cout << "looping... " << std::endl;
     }
 
+    int valArray[3];
+    valArray[0]=89;
+    valArray[1]=123;
+    valArray[2]=57;
+
+    for(int i=0;i<sizeof(valArray)/sizeof(int);++i)
+    {
+        std::cout << valArray[i] << std::endl;
+    }
+
+    double arrNumbers[4] = {4.5, 2.3, 7.2, 8.1};
+    double intWithInitialize[4] = {}; //{} initializes
+
+    std::string textsArray[] = {"apple", "banana"};
+    for(int i=0;i<2;++i)
+    {
+        std::cout << textsArray[i] << std::endl;
+    }
+
     return 0;
 }
