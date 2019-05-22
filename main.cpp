@@ -285,5 +285,26 @@ int main()
         std::cout << std::endl;
     }
 
+    int anotherArr[] = {123, 1234, 234, 5634};
+
+    std::cout << sizeof(anotherArr) << ", " << sizeof(int) << std::endl;
+    for(unsigned int i=0;i<sizeof(anotherArr)/sizeof(int);++i) //compiler warning in tutorial, signed int compare with unsigned int
+    {
+        std::cout << anotherArr[i] << std::endl;
+    }
+
+    std::cout << sizeof(animals) << ", " << sizeof(animals[0]) << std::endl;
+
+    for(int i=0;i<sizeof(animals)/sizeof(animals[0]);++i)
+    {
+        for(int j=0;j<sizeof(animals[0])/sizeof(std::string);++j)
+        {
+            std::cout << animals[i][j] << " " << std::flush;
+        }
+        std::cout << std::endl;
+    }
+
+    
+
     return 0;
 }
