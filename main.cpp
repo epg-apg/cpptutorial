@@ -220,7 +220,7 @@ int main()
         lcounter++;
     }
 
-    const std::string looppassword = "hello"; // const    
+    const std::string looppassword = "hello"; // const
     std::string loopinput;
 
     // do
@@ -233,19 +233,19 @@ int main()
     //     }
     // } while (loopinput != looppassword);
 
-    for(int i = 0;i < 10;++i)
+    for (int i = 0; i < 10; ++i)
     {
         std::cout << "Hello " << i << std::endl;
-        if(i==3)
+        if (i == 3)
         {
             break;
         }
     }
 
-    for(int i = 0;i < 10;++i)
+    for (int i = 0; i < 10; ++i)
     {
         std::cout << "Hello " << i << std::endl;
-        if(i==3)
+        if (i == 3)
         {
             continue;
         }
@@ -253,58 +253,70 @@ int main()
     }
 
     int valArray[3];
-    valArray[0]=89;
-    valArray[1]=123;
-    valArray[2]=57;
+    valArray[0] = 89;
+    valArray[1] = 123;
+    valArray[2] = 57;
 
-    for(int i=0;i<sizeof(valArray)/sizeof(int);++i)
+    for (int i = 0; i < sizeof(valArray) / sizeof(int); ++i)
     {
         std::cout << valArray[i] << std::endl;
     }
 
-    double arrNumbers[4] = {4.5, 2.3, 7.2, 8.1};
+    double arrNumbers[4]        = { 4.5, 2.3, 7.2, 8.1 };
     double intWithInitialize[4] = {}; //{} initializes
 
-    std::string textsArray[] = {"apple", "banana"};
-    for(int i=0;i<2;++i)
+    std::string textsArray[] = { "apple", "banana" };
+    for (int i = 0; i < 2; ++i)
     {
         std::cout << textsArray[i] << std::endl;
     }
 
-    std::string animals[2][3] = {
-        {"fox", "dog", "cat"}, 
-        {"mouse", "squirrel", "parrot"}
-    };
+    std::string animals[2][3] = { { "fox", "dog", "cat" }, { "mouse", "squirrel", "parrot" } };
 
-    for(int i=0;i<2;++i)
+    for (int i = 0; i < 2; ++i)
     {
-        for(int j=0;j<3;++j)
+        for (int j = 0; j < 3; ++j)
         {
             std::cout << animals[i][j] << " " << std::flush;
         }
         std::cout << std::endl;
     }
 
-    int anotherArr[] = {123, 1234, 234, 5634};
+    int anotherArr[] = { 123, 1234, 234, 5634 };
 
     std::cout << sizeof(anotherArr) << ", " << sizeof(int) << std::endl;
-    for(unsigned int i=0;i<sizeof(anotherArr)/sizeof(int);++i) //compiler warning in tutorial, signed int compare with unsigned int
+    for (unsigned int i = 0; i < sizeof(anotherArr) / sizeof(int);
+         ++i) // compiler warning in tutorial, signed int compare with unsigned int
     {
         std::cout << anotherArr[i] << std::endl;
     }
 
     std::cout << sizeof(animals) << ", " << sizeof(animals[0]) << std::endl;
 
-    for(int i=0;i<sizeof(animals)/sizeof(animals[0]);++i)
+    for (int i = 0; i < sizeof(animals) / sizeof(animals[0]); ++i)
     {
-        for(int j=0;j<sizeof(animals[0])/sizeof(std::string);++j)
+        for (int j = 0; j < sizeof(animals[0]) / sizeof(std::string); ++j)
         {
             std::cout << animals[i][j] << " " << std::flush;
         }
         std::cout << std::endl;
     }
 
-    
+    int switchval = 5;
+    switch (switchval)
+    {
+    case 4: // variables not allowed here, but with const int it is possible
+        std::cout << "Situation 4" << std::endl;
+        break;
+    case 5:
+        std::cout << "Situation 5" << std::endl;
+        break;
+    case 6:
+        std::cout << "Situation 6" << std::endl;
+        break;
+    default:
+        std::cout << "Normal Situation" << std::endl;
+    }
 
     return 0;
 }
