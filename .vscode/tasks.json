@@ -6,8 +6,9 @@
         {
             "label": "build_cpp",
             "type": "shell",
-            "command": "g++",
-            "args": ["-g", "main.cpp"],
+            "command": "g++ main.cpp -g",
+            //"args": ["-g", "main.cpp"],
+            //"command": "g++ main.cpp -g -o a.exe ; ./a.exe ",
             "group": {
                 "kind": "build",
                 "isDefault": true
