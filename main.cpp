@@ -44,8 +44,8 @@ int main()
     // std::cout << "You entered: " << inputNo << std::endl;
 
     // integer variables
-    int willnotwork = 12147483647;
-    std::cout << "Will not work: " << willnotwork << std::endl;
+    //int willnotwork = 12147483647;
+    //std::cout << "Will not work: " << willnotwork << std::endl;
     std::cout << "Max int value: " << INT_MAX << std::endl;
     std::cout << "Min int value: " << INT_MIN << std::endl;
 
