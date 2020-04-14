@@ -7,14 +7,21 @@ void showMenu()
     std::cout << "3. Quit" << std::endl;
 }
 
-void processSelection()
+int getSelection()
 {
     std::cout << "Enter selection: " << std::endl;
 
     int input;
     std::cin >> input;
 
-    switch (input)
+    return input;
+}
+
+void processSelection()
+{
+    int selection = getSelection();
+
+    switch (selection)
     {
     case 1:
         std::cout << "Searching ..." << std::endl;
