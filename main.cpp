@@ -17,10 +17,8 @@ int getSelection()
     return input;
 }
 
-void processSelection()
+void processSelection(int selection)
 {
-    int selection = getSelection();
-
     switch (selection)
     {
     case 1:
@@ -40,7 +38,8 @@ void processSelection()
 int main()
 {
     showMenu();
-    processSelection();
+    int selection = getSelection();
+    processSelection(selection);
 
     return 0;
 }
