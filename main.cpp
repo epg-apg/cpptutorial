@@ -1,4 +1,14 @@
 #include <iostream>
+#include "main.h"
+
+int main()
+{
+    showMenu();
+    int selection = getSelection();
+    processSelection(selection);
+
+    return 0;
+}
 
 void showMenu()
 {
@@ -33,13 +43,4 @@ void processSelection(int selection)
     default:
         std::cout << "Please select an item from the menu" << std::endl;
     }
-}
-
-int main()
-{
-    showMenu();
-    int selection = getSelection();
-    processSelection(selection);
-
-    return 0;
 }
