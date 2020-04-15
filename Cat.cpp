@@ -2,10 +2,30 @@
 
 #include "Cat.h"
 
-void Cat::speak() {
-    std::cout << "Speak" << std::endl;
+void Cat::speak()
+{
+    if (happy == true)
+    {
+        std::cout << "Speak happy" << std::endl;
+    }
+    else
+    {
+        std::cout << "Speak unhappy" << std::endl;
+    }
+    
 }
 
-void Cat::jump() {
+void Cat::jump()
+{
     std::cout << "Jump" << std::endl;
+}
+
+void Cat::makeHappy()
+{
+    happy = true;
+}
+
+void Cat::makeSad()
+{
+    happy = false;
 }
