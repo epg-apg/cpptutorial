@@ -1,10 +1,12 @@
 #include <iostream>
 
+#include "Cat.h"
+
 int main()
 {
-    std::cout << "Starting..." << std::flush;
-    std::cout << "Hallo !!! Wow !" << std::endl;
-    std::cout << "123 " << "456 " << "789" << std::endl;
-    std::cout << "Another line!" << std::endl;
+    Cat myCat;
+    myCat.speak();
+    myCat.jump();
+
     return 0;
 }
