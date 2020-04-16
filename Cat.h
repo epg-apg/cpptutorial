@@ -5,6 +5,8 @@ class Cat
 {
 
 public:
+    Cat();
+    ~Cat();
     void speak();
     void jump();
     void makeHappy();

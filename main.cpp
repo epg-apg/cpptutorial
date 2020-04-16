@@ -14,5 +14,12 @@ int main()
     jim.speak();
     jim.jump();
 
+    { //scope example
+        Cat tom;
+        tom.speak();
+    }
+
+    std::cout << "End program" << std::endl;
+
     return 0;
 }

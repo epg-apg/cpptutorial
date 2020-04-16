@@ -2,6 +2,17 @@
 
 #include "Cat.h"
 
+Cat::Cat()
+{
+    std::cout << "Cat created..." << std::endl;
+    happy = false;
+}
+
+Cat::~Cat()
+{
+    std::cout << "Cat destroyed..." << std::endl;
+}
+
 void Cat::speak()
 {
     if (happy == true)
@@ -12,7 +23,6 @@ void Cat::speak()
     {
         std::cout << "Speak unhappy" << std::endl;
     }
-    
 }
 
 void Cat::jump()
