@@ -1,6 +1,7 @@
 #include <iostream>
 
 #include "Cat.h"
+#include "Person.h"
 
 int main()
 {
@@ -18,6 +19,11 @@ int main()
         Cat tom;
         tom.speak();
     }
+
+    Person george;
+    std::cout << george.toString() << std::endl;
+    george.setName("Mike");
+    std::cout << george.toString() << std::endl;
 
     std::cout << "End program" << std::endl;
 
