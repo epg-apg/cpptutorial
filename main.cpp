@@ -12,7 +12,7 @@ int main()
     bob.makeSad();
     bob.speak();
     bob.jump();
-
+    
     Cat jim;
     jim.makeHappy();
     jim.speak();
@@ -27,6 +27,12 @@ int main()
     std::cout << george.toString() << std::endl;
     george.setName("Mike");
     std::cout << george.toString() << std::endl;
+
+    Person hans("Hans");
+    std::cout << hans.toString() << std::endl;
+
+    Person sue("Sue", 47);
+    std::cout << sue.toString() << std::endl;
 
     stringstreams();
 
