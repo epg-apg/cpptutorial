@@ -22,9 +22,19 @@ Person::Person(std::string newName, int newAge)
     age  = newAge;
 }
 
+Person::Person(int age)
+{
+    this->age = age;
+}
+
 Person::~Person()
 {
     std::cout << "Person destroyed..." << std::endl;
+}
+
+void Person::outputMemoryAddress() 
+{
+    std::cout << "Memory: " << this << std::endl;
 }
 
 std::string Person::toString()

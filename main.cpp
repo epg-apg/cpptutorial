@@ -33,6 +33,8 @@ int main()
 
     Person sue("Sue", 47);
     std::cout << sue.toString() << std::endl;
+    sue.outputMemoryAddress();
+    std::cout << "Sue memory: " << &sue << std::endl;
 
     stringstreams();
 
