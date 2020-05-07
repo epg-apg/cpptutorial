@@ -7,7 +7,7 @@
             "label": "build_cpp",
             "type": "shell",
             "command": "g++",
-            "args": ["-g", "main.cpp", "Cat.cpp", "Person.cpp"],
+            "args": ["-g", "main.cpp", "Cat.cpp", "Person.cpp", "Dog.cpp"],
             "group": {
                 "kind": "build",
                 "isDefault": true
