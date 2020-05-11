@@ -1,2 +1,5 @@
 *.exe
+
+# Ignore special Visual Studio Code files
 .vscode/ipch/
+.vscode/settings.json
