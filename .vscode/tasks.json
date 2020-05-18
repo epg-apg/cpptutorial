@@ -6,7 +6,7 @@
         {
             "label": "build_cpp",
             "type": "shell",
-            "command": "g++",
+            "command": "C:\\MinGw\\bin\\g++.exe",
             "args": ["-g", "main.cpp"],
             "group": {
                 "kind": "build",
