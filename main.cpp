@@ -1,41 +1,73 @@
 #include <iostream>
 
-void manipulate(double value)
+void loop(int length)
 {
-    std::cout << "(manipulate) Value, before: " << value << std::endl;
-    value = 10;
-    std::cout << "(manipulate) Value, after: " << value << std::endl;
+    std::cout << "Progress: ";
+
+    for (int i = 0; i < length; ++i)
+    {
+        if(i % 100 == 0)
+            std::cout << ".";
+    }
+
+    std::cout << std::endl;
 }
 
-void realmanipulate(double *value)
+void splitSeconds(int seconds)
 {
-    std::cout << "(realmanipulate) Value, before: " << *value << std::endl;
-    *value = 10;
-    std::cout << "(realmanipulate) Value, after: " << *value << std::endl;
+    // first solution
+    int hours = seconds / (60 * 60);
+    int mins  = (seconds - (hours * 60 * 60)) / 60;
+    int secs  = (seconds - (hours * 60 * 60) - (mins * 60));
+
+    std::cout << "Result: " << hours << ":" << mins << ":" << secs << std::endl;
+    std::cout << "Checksum: " << seconds << "=" << secs + mins * 60 + hours * 60 * 60 << std::endl;
+
+    // second solution
+    hours = seconds / (60 * 60);
+    mins  = (seconds % (60 * 60)) / 60;
+    //mins  = (seconds / 60 ) % 60; // from forum
+    secs  = seconds % 60;
+
+    std::cout << "Result: " << hours << ":" << mins << ":" << secs << std::endl;
+    std::cout << "Checksum: " << seconds << "=" << secs + mins * 60 + hours * 60 * 60 << std::endl;
 }
 
 int main()
 {
-    int numberVal   = 8;
-    int *pNumberVal = &numberVal;
+    double value1 = 7 / 2; // division from two integers
+    std::cout << "Result 1: " << value1 << std::endl;
 
-    std::cout << "(main) Int value: " << numberVal << std::endl;
-    std::cout << "(main) Int pointer: " << pNumberVal << std::endl;
-    std::cout << "(main) Int value by pointer: " << *pNumberVal << std::endl;
+    double value2 = 7.0 / 2; // at least one double, floating point division
+    std::cout << "Result 2: " << value2 << std::endl;
 
-    std::cout << "------" << std::endl;
+    double value3 = (double)7 / 2; // cast
+    std::cout << "Result 3: " << value3 << std::endl;
 
-    double dValue1 = 123.4;
-    std::cout << "(main) Double value: " << dValue1 << std::endl;
-    manipulate(dValue1); // manipulate cannot change value, because of call-by-value
-    std::cout << "(main) Double value: " << dValue1 << std::endl;
+    std::cout << "----" << std::endl;
 
-    std::cout << "------" << std::endl;
+    int value4 = 8;
+    value4 += 1; // value4 = value4 + 1; or value4++;
+    std::cout << "Result 4: " << value4 << std::endl;
 
-    double dValue2 = 123.4;
-    std::cout << "(main) Double value: " << dValue2 << std::endl;
-    realmanipulate(&dValue2);
-    std::cout << "(main) Double value: " << dValue2 << std::endl;
+    int value5 = 10;
+    value5 /= 5; // value5 = value5 / 5;
+    std::cout << "Result 5: " << value5 << std::endl;
+
+    int value6 = 12 % 5;
+    std::cout << "Result 6: " << value6 << std::endl;
+
+    std::cout << "----" << std::endl;
+
+    splitSeconds(7412);
+    splitSeconds(45647);
+    splitSeconds(58979);
+    splitSeconds(123045);
+
+    std::cout << "----" << std::endl;
+
+    loop(200);
+    loop(10000);
 
     return 0;
 }
