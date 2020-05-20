@@ -2,48 +2,40 @@
 
 int main()
 {
-    std::string stringArray[] = { "one", "two", "three" };
+    const int ELEMENTS          = 5;
+    std::string texts[ELEMENTS] = { "one", "two", "three", "four", "five" };
 
-    std::cout << "Array size: " << sizeof(stringArray) / sizeof(std::string) << std::endl;
+    std::string *pText = texts;
 
-    for (int i = 0; i < sizeof(stringArray) / sizeof(std::string); ++i)
+    std::cout << "1: " << *pText << std::endl;
+    pText += 3;
+    std::cout << "2: " << *pText << std::endl;
+    pText -= 1;
+    std::cout << "3: " << *pText << std::endl;
+
+    std::string *pEnd = &texts[ELEMENTS - 1];
+    std::cout << "4: " << *pEnd << std::endl;
+
+    pText = &texts[0];
+    // used for "end of array", but should not be used for anything else, invalid memory area!!!
+    std::string *pInvalidEnd = &texts[ELEMENTS];
+
+    while (pText != pInvalidEnd)
     {
-        std::cout << "String [" << i << "] " << stringArray[i] << std::endl;
+        std::cout << "Loop: " << *pText << std::endl;
+        pText++;
     }
 
-    std::string *pText = stringArray; // works, set to first entry
-    std::cout << "pText: " << *pText << std::endl;
+    // number of array items, pointer arithmetic. take last pointer and first pointer and you know
+    // how many are there
+    pText        = &texts[0];
+    long entries = (long)(pInvalidEnd - pText);
+    std::cout << "Entries: " << entries << std::endl;
 
-    for (int i = 0; i < sizeof(stringArray) / sizeof(std::string); ++i)
-    {
-        std::cout << "String [" << i << "] " << pText[i] << std::endl;
-    }
-
-    pText = stringArray; // set to first entry
-    for (int i = 0; i < sizeof(stringArray) / sizeof(std::string); ++i)
-    {
-        std::cout << "String [" << i << "] " << *pText << std::endl;
-        pText = pText + 1;
-    }
-
-    pText = stringArray; // set to first entry
-    for (int i = 0; i < sizeof(stringArray) / sizeof(std::string); ++i, pText++)
-    {
-        std::cout << "String [" << i << "] " << *pText << std::endl;
-    }
-
-    std::string *pBeginPtr = stringArray; // same as std::string *pBeginPtr = &stringArray[0];
-    std::string *pEndPtr   = &stringArray[2];
-
-    while (true)
-    {
-        std::cout << *pBeginPtr << " " << std::flush;
-
-        if (pBeginPtr == pEndPtr)
-            break;
-            
-        pBeginPtr++;
-    }
+    // pointer arithmetic for middle of array
+    pText = &texts[0];
+    pText += ELEMENTS / 2;
+    std::cout << "Middle: " << *pText << std::endl;
 
     return 0;
 }
