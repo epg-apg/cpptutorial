@@ -26,10 +26,11 @@ int main()
 
     std::cout << "Last letter: " << *pEnd << std::endl;
 
-    while(pStart < pEnd) {
+    while (pStart < pEnd)
+    {
         char save = *pStart;
-        *pStart = *pEnd;
-        *pEnd = save;
+        *pStart   = *pEnd;
+        *pEnd     = save;
 
         pStart++;
         pEnd--;
