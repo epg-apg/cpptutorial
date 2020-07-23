@@ -57,5 +57,14 @@ int main()
     Animal animal3(animal1);
     animal3.speak();
 
+    // the new operator
+    Animal *pCat = new Animal(); // allocated memory ! delete must be used !!!!!!
+    (*pCat).setName("Sue"); // also works
+    pCat->speak();
+
+    delete pCat; // deallocate
+    std::cout << sizeof(pCat) << std::endl;
+
+    std::cout << "Close... " << std::endl;
     return 0;
 }

@@ -14,6 +14,7 @@ Animal::Animal(const Animal& other): name(other.name)
 
 Animal::~Animal()
 {
+    std::cout << "Animal destroyed" << std::endl;
 }
 
 void Animal::speak() const
