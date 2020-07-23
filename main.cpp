@@ -1,42 +1,24 @@
 #include <iostream>
 
+void changeSomething(double &value)
+{
+    value = 123.4;
+}
+
 int main()
 {
-    char text[] = "hello";
-    char reverse[sizeof(text)];
+    int value1 = 8;
+    // reference variable, value2 is a reference to value1 (aka other name to value1, synonym/alias)
+    int &value2 = value1;
+    value2      = 10;
 
-    // reverse[0]=text[4];
-    // reverse[1]=text[3];
-    // reverse[2]=text[2];
-    // reverse[3]=text[1];
-    // reverse[4]=text[0];
+    std::cout << "Value 1: " << value1 << std::endl;
+    std::cout << "Value 2: " << value2 << std::endl;
 
-    for (unsigned int i = 0; i < (sizeof(text) - 1); ++i)
-    {
-        reverse[i] = text[sizeof(text) - 2 - i];
-    }
-    reverse[sizeof(reverse) - 1] = 0;
-
-    std::cout << "Reverse: '" << reverse << "'; '" << text << "'" << std::endl;
-
-    // solution from video with pointer
-    int nChars   = sizeof(text) - 1;
-    char *pStart = text;
-    char *pEnd   = text + nChars - 1;
-
-    std::cout << "Last letter: " << *pEnd << std::endl;
-
-    while (pStart < pEnd)
-    {
-        char save = *pStart;
-        *pStart   = *pEnd;
-        *pEnd     = save;
-
-        pStart++;
-        pEnd--;
-    }
-
-    std::cout << "Swapped: " << text << std::endl;
+    // reference for parameter
+    double value3 = 4.321;
+    changeSomething(value3);
+    std::cout << "Value 3: " << value3 << std::endl;
 
     return 0;
 }
