@@ -4,14 +4,27 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "build_cpp",
+            "label": "compile_classes",
             "type": "shell",
             "command": "g++",
-            "args": ["-g", "main.cpp", "Cat.cpp", "Person.cpp", "Dog.cpp"],
-            "group": {
-                "kind": "build",
-                "isDefault": true
+            "args": ["-g", "-Wall", "-oclasses", "classes/main.cpp", "classes/Cat.cpp", "classes/Person.cpp", "classes/Dog.cpp"],
+            "group": "build",
+            "problemMatcher": {
+                "owner": "cpp",
+                "fileLocation": [
+                    "relative",
+                    "${workspaceFolder}"
+                ],
+                "pattern": {
+                    "regexp": "^(.*):(\\d+):(\\d+):\\s+(warning|error):\\s+(.*)$",
+                    "file": 1,
+                    "line": 2,
+                    "column": 3,
+                    "severity": 4,
+                    "message": 5
+                }
             }
-        }
+        },
+        
     ]
 }
