@@ -9,8 +9,8 @@
             "command": "C:\\MinGw\\bin\\g++.exe",
             "args": [
                 "-g",
-                "main.cpp",
-                "-Wall"
+                "-Wall",
+                "main.cpp"
             ],
             "group": {
                 "kind": "build",
@@ -38,9 +38,39 @@
             "command": "C:\\MinGw\\bin\\g++.exe",
             "args": [
                 "-g",
-                "main.cpp",
                 "-Wall",
-                "-osyntax"
+                "-osyntax",
+                "syntax/main.cpp"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": {
+                "owner": "cpp",
+                "fileLocation": [
+                    "relative",
+                    "${workspaceFolder}"
+                ],
+                "pattern": {
+                    "regexp": "^(.*):(\\d+):(\\d+):\\s+(warning|error):\\s+(.*)$",
+                    "file": 1,
+                    "line": 2,
+                    "column": 3,
+                    "severity": 4,
+                    "message": 5
+                }
+            }
+        },
+        {
+            "label": "compile_functions",
+            "type": "shell",
+            "command": "C:\\MinGw\\bin\\g++.exe",
+            "args": [
+                "-g",
+                "-Wall",
+                "-ofunctions",
+                "functions/main.cpp"
             ],
             "group": {
                 "kind": "build",
