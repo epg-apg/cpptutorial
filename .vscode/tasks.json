@@ -4,12 +4,13 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "default build",
+            "label": "default_build",
             "type": "shell",
             "command": "C:\\MinGw\\bin\\g++.exe",
             "args": [
                 "-g",
                 "-Wall",
+                "-obuild/main",
                 "main.cpp"
             ],
             "group": {
@@ -39,13 +40,10 @@
             "args": [
                 "-g",
                 "-Wall",
-                "-osyntax",
+                "-obuild/syntax",
                 "syntax/main.cpp"
             ],
-            "group": {
-                "kind": "build",
-                "isDefault": true
-            },
+            "group": "build",
             "problemMatcher": {
                 "owner": "cpp",
                 "fileLocation": [
@@ -69,13 +67,10 @@
             "args": [
                 "-g",
                 "-Wall",
-                "-ofunctions",
+                "-obuild/functions",
                 "functions/main.cpp"
             ],
-            "group": {
-                "kind": "build",
-                "isDefault": true
-            },
+            "group": "build",
             "problemMatcher": {
                 "owner": "cpp",
                 "fileLocation": [
@@ -99,7 +94,7 @@
             "args": [
                 "-g",
                 "-Wall",
-                "-oclasses",
+                "-obuild/classes",
                 "classes/main.cpp",
                 "classes/Cat.cpp",
                 "classes/Person.cpp",
@@ -123,13 +118,13 @@
             }
         },
         {
-            "label": "compile_pinter",
+            "label": "compile_pointer",
             "type": "shell",
             "command": "g++",
             "args": [
                 "-g",
                 "-Wall",
-                "-opointer",
+                "-obuild/pointer",
                 "pointer/main.cpp"
             ],
             "group": "build",
@@ -148,6 +143,10 @@
                     "message": 5
                 }
             }
+        },
+        {
+            "label": "build_all",
+            "dependsOn": ["default_build", "compile_syntax", "compile_functions", "compile_classes", "compile_pointer"]
         }
     ]
 }
