@@ -43,5 +43,19 @@ int main()
 
     std::cout << "Pointer value: " << *pValue << std::endl;
 
+    // copy constructor
+    Animal animal1;
+    animal1.setName("Freddy");
+
+    Animal animal2 = animal1;
+    animal2.speak();
+    animal2.setName("Tom");
+
+    animal1.speak();
+    animal2.speak();
+
+    Animal animal3(animal1);
+    animal3.speak();
+
     return 0;
 }
