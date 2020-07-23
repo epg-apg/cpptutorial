@@ -4,13 +4,13 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "build_cpp",
+            "label": "default build",
             "type": "shell",
             "command": "C:\\MinGw\\bin\\g++.exe",
             "args": [
                 "-g",
-                "main.cpp",
-                "-Wall"
+                "-Wall",
+                "main.cpp"
             ],
             "group": {
                 "kind": "build",
@@ -31,6 +31,96 @@
                     "message": 5
                 }
             }
-        }
+        },
+        {
+            "label": "compile_syntax",
+            "type": "shell",
+            "command": "C:\\MinGw\\bin\\g++.exe",
+            "args": [
+                "-g",
+                "-Wall",
+                "-osyntax",
+                "syntax/main.cpp"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": {
+                "owner": "cpp",
+                "fileLocation": [
+                    "relative",
+                    "${workspaceFolder}"
+                ],
+                "pattern": {
+                    "regexp": "^(.*):(\\d+):(\\d+):\\s+(warning|error):\\s+(.*)$",
+                    "file": 1,
+                    "line": 2,
+                    "column": 3,
+                    "severity": 4,
+                    "message": 5
+                }
+            }
+        },
+        {
+            "label": "compile_functions",
+            "type": "shell",
+            "command": "C:\\MinGw\\bin\\g++.exe",
+            "args": [
+                "-g",
+                "-Wall",
+                "-ofunctions",
+                "functions/main.cpp"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": {
+                "owner": "cpp",
+                "fileLocation": [
+                    "relative",
+                    "${workspaceFolder}"
+                ],
+                "pattern": {
+                    "regexp": "^(.*):(\\d+):(\\d+):\\s+(warning|error):\\s+(.*)$",
+                    "file": 1,
+                    "line": 2,
+                    "column": 3,
+                    "severity": 4,
+                    "message": 5
+                }
+            }
+        },
+        {
+            "label": "compile_classes",
+            "type": "shell",
+            "command": "g++",
+            "args": [
+                "-g",
+                "-Wall",
+                "-oclasses",
+                "classes/main.cpp",
+                "classes/Cat.cpp",
+                "classes/Person.cpp",
+                "classes/Dog.cpp"
+            ],
+            "group": "build",
+            "problemMatcher": {
+                "owner": "cpp",
+                "fileLocation": [
+                    "relative",
+                    "${workspaceFolder}"
+                ],
+                "pattern": {
+                    "regexp": "^(.*):(\\d+):(\\d+):\\s+(warning|error):\\s+(.*)$",
+                    "file": 1,
+                    "line": 2,
+                    "column": 3,
+                    "severity": 4,
+                    "message": 5
+                }
+            }
+        },
     ]
 }
