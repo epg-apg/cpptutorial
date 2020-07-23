@@ -58,6 +58,8 @@ int main()
 
     unsigned int myuint = 123;
     int myint           = 123;
+    std::cout << "Sizeof(int): " << sizeof(myuint) << std::endl;
+    std::cout << "Sizeof(int): " << sizeof(myint) << std::endl;
 
     // floating point
     float myfloat = 76.4;
@@ -114,7 +116,7 @@ int main()
 
     std::cout << "Enter your selection: " << std::flush;
 
-    int menuselection;
+    int menuselection = 0;
     // std::cin >> menuselection;
 
     if (menuselection < 3)
@@ -194,7 +196,7 @@ int main()
         std::cout << "Cond2 false" << std::endl;
     }
 
-    if (ival1 > 8 && ival2 < 3 || ival1 < 10) // use brackets
+    if ((ival1 > 8 && ival2 < 3) || ival1 < 10) // use brackets
     {
         std::cout << "Cond3 true" << std::endl;
     }
@@ -257,13 +259,14 @@ int main()
     valArray[1] = 123;
     valArray[2] = 57;
 
-    for (int i = 0; i < sizeof(valArray) / sizeof(int); ++i)
+    for (unsigned int i = 0; i < sizeof(valArray) / sizeof(int); ++i)
     {
         std::cout << valArray[i] << std::endl;
     }
 
-    double arrNumbers[4]        = { 4.5, 2.3, 7.2, 8.1 };
-    double intWithInitialize[4] = {}; //{} initializes
+    // __attribute__((unused)) see https://stackoverflow.com/questions/15053776/how-do-you-disable-the-unused-variable-warnings-coming-out-of-gcc-in-3rd-party-c
+    double arrNumbers[4] __attribute__((unused))       = { 4.5, 2.3, 7.2, 8.1 };
+    double intWithInitialize[4] __attribute__((unused)) = {}; //{} initializes
 
     std::string textsArray[] = { "apple", "banana" };
     for (int i = 0; i < 2; ++i)
@@ -293,9 +296,9 @@ int main()
 
     std::cout << sizeof(animals) << ", " << sizeof(animals[0]) << std::endl;
 
-    for (int i = 0; i < sizeof(animals) / sizeof(animals[0]); ++i)
+    for (unsigned int i = 0; i < sizeof(animals) / sizeof(animals[0]); ++i)
     {
-        for (int j = 0; j < sizeof(animals[0]) / sizeof(std::string); ++j)
+        for (unsigned int j = 0; j < sizeof(animals[0]) / sizeof(std::string); ++j)
         {
             std::cout << animals[i][j] << " " << std::flush;
         }
