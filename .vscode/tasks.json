@@ -127,6 +127,7 @@
                 "-obuild/pointer",
                 "pointer/main.cpp",
                 "pointer/Animal.cpp",
+                "pointer/Exercise.cpp",
             ],
             "group": "build",
             "problemMatcher": {
