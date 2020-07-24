@@ -1,3 +1,6 @@
+#ifndef ANIMAL_H_
+#define ANIMAL_H_
+
 #include <iostream>
 
 class Animal
@@ -13,3 +16,5 @@ private:
     std::string name;
     
 };
+
+#endif

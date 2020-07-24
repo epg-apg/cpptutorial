@@ -1,3 +1,6 @@
+#ifndef EXERCISE_H_
+#define EXERCISE_H_
+
 #include <iostream>
 
 class Exercise
@@ -10,3 +13,5 @@ public:
     void setName(std::string newName);
     void output() const;
 };
+
+#endif
