@@ -15,6 +15,42 @@ Animal *createAnimal()
     return a;
 }
 
+void show1(std::string xParm[], int xSize)
+{
+    for (int i = 0; i < xSize; ++i)
+    {
+        std::cout << xParm[i] << std::endl;
+    }
+}
+
+void show2(std::string *xParm, int xSize)
+{
+    for (int i = 0; i < xSize; ++i)
+    {
+        std::cout << xParm[i] << std::endl;
+    }
+}
+
+void show3(std::string (&xParm)[3])
+{
+    for (unsigned int i = 0; i < sizeof(xParm)/sizeof(std::string); ++i)
+    {
+        std::cout << xParm[i] << std::endl;
+    }
+}
+
+std::string *getArray() {
+    // do not return local variables in pointer functions
+    //std::string texts[] = { "one", "two", "three" };
+    std::string *texts = new std::string[3];
+
+    return texts;
+}
+
+void freeMemory(std::string *pointer) {
+    delete[] pointer;
+}
+
 int main()
 {
     std::cout << "----- reverse -----" << std::endl;
@@ -137,6 +173,16 @@ int main()
         exerciseArray[i].output();
     }
     delete[] exerciseArray;
+
+    // arrays and function
+    std::cout << "----- Arrays and function -----" << std::endl;
+    std::string texts[] = { "Apple", "Orange", "Banana" };
+    show1(texts, 3);
+    show2(texts, 3);
+    show3(texts);
+
+    std::string *myArrayVar = getArray();
+    freeMemory(myArrayVar);
 
     std::cout << "Close... " << std::endl;
     return 0;
