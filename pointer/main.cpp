@@ -6,6 +6,14 @@ void changeSomething(double &value)
     value = 123.4;
 }
 
+Animal* createAnimal()
+{
+    Animal *a = new Animal();
+    a->setName("Zack");
+
+    return a;
+}
+
 int main()
 {
     int value1 = 8;
@@ -64,6 +72,11 @@ int main()
 
     delete pCat; // deallocate
     std::cout << sizeof(pCat) << std::endl;
+
+    // return object from function
+    Animal *zack = createAnimal();
+    zack->speak();
+    delete zack;
 
     std::cout << "Close... " << std::endl;
     return 0;
