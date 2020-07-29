@@ -186,7 +186,8 @@
                 "-g",
                 "-Wall",
                 "-obuild/additional",
-                "additional/main.cpp"
+                "additional/main.cpp",
+                "additional/Test.cpp"
             ],
             "group": "build",
             "problemMatcher": {

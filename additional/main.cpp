@@ -1,4 +1,5 @@
 #include <iostream>
+#include "Test.h"
 
 int main()
 {
@@ -7,7 +8,6 @@ int main()
 
     value++; // -128
     std::cout << (int)value << std::endl;
-
 
     /*
      * Example how it could be done, but is in fact not done:
@@ -66,6 +66,17 @@ int main()
      *  111 = -1
      * 
      */
+
+    std::cout << "Test: " << Test::count << std::endl;
+    Test::showHidden();
+    std::cout << "Max: " << Test::MAX << std::endl;
+
+    Test t1;
+    std::cout << "ID t1: " << t1.getId() << std::endl;
+    Test t2;
+    std::cout << "ID t2: " << t2.getId() << std::endl;
+
+    std::cout << "Test: " << Test::count << std::endl;
 
     return 0;
 }
