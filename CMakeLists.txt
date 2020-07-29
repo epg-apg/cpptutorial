@@ -4,19 +4,19 @@ project(Cpp_Tutorial)
 add_executable("default" "main.cpp")
 
 # Chapter 1
-add_executable("syntax" "syntax/main.cpp")
+add_executable("syntax" "tutorial/syntax/main.cpp")
 
 # Chapter 2
-add_executable("functions" "functions/main.cpp")
+add_executable("functions" "tutorial/functions/main.cpp")
 
 # Chapter 3
-add_executable("classes" "classes/main.cpp" "classes/Cat.cpp" "classes/Person.cpp" "classes/Dog.cpp")
+add_executable("classes" "tutorial/classes/main.cpp" "tutorial/classes/Cat.cpp" "tutorial/classes/Person.cpp" "tutorial/classes/Dog.cpp")
 
 # Chapter 4
-add_executable("pointer" "pointer/main.cpp" "pointer/Animal.cpp" "pointer/Exercise.cpp")
+add_executable("pointer" "tutorial/pointer/main.cpp" "tutorial/pointer/Animal.cpp" "tutorial/pointer/Exercise.cpp")
 
 # Chapter 5
-add_executable("inheritance" "inheritance/main.cpp" "inheritance/Animal.cpp" "inheritance/Cat.cpp" "inheritance/Tiger.cpp" "inheritance/Machine.cpp" "inheritance/Vehicle.cpp")
+add_executable("inheritance" "tutorial/inheritance/main.cpp" "tutorial/inheritance/Animal.cpp" "tutorial/inheritance/Cat.cpp" "tutorial/inheritance/Tiger.cpp" "tutorial/inheritance/Machine.cpp" "tutorial/inheritance/Vehicle.cpp")
 
 # Chapter 6
-add_executable("additional" "additional/main.cpp" "additional/Test.cpp")
+add_executable("additional" "tutorial/additional/main.cpp" "tutorial/additional/Test.cpp")

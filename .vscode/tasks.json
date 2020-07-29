@@ -41,7 +41,7 @@
                 "-g",
                 "-Wall",
                 "-obuild/syntax",
-                "syntax/main.cpp"
+                "tutorial/syntax/main.cpp"
             ],
             "group": "build",
             "problemMatcher": {
@@ -68,7 +68,7 @@
                 "-g",
                 "-Wall",
                 "-obuild/functions",
-                "functions/main.cpp"
+                "tutorial/functions/main.cpp"
             ],
             "group": "build",
             "problemMatcher": {
@@ -95,10 +95,10 @@
                 "-g",
                 "-Wall",
                 "-obuild/classes",
-                "classes/main.cpp",
-                "classes/Cat.cpp",
-                "classes/Person.cpp",
-                "classes/Dog.cpp"
+                "tutorial/classes/main.cpp",
+                "tutorial/classes/Cat.cpp",
+                "tutorial/classes/Person.cpp",
+                "tutorial/classes/Dog.cpp"
             ],
             "group": "build",
             "problemMatcher": {
@@ -125,9 +125,9 @@
                 "-g",
                 "-Wall",
                 "-obuild/pointer",
-                "pointer/main.cpp",
-                "pointer/Animal.cpp",
-                "pointer/Exercise.cpp",
+                "tutorial/pointer/main.cpp",
+                "tutorial/pointer/Animal.cpp",
+                "tutorial/pointer/Exercise.cpp",
             ],
             "group": "build",
             "problemMatcher": {
@@ -154,12 +154,12 @@
                 "-g",
                 "-Wall",
                 "-obuild/inheritance",
-                "inheritance/main.cpp",
-                "inheritance/Animal.cpp",
-                "inheritance/Cat.cpp",
-                "inheritance/Tiger.cpp",
-                "inheritance/Machine.cpp",
-                "inheritance/Vehicle.cpp"
+                "tutorial/inheritance/main.cpp",
+                "tutorial/inheritance/Animal.cpp",
+                "tutorial/inheritance/Cat.cpp",
+                "tutorial/inheritance/Tiger.cpp",
+                "tutorial/inheritance/Machine.cpp",
+                "tutorial/inheritance/Vehicle.cpp"
             ],
             "group": "build",
             "problemMatcher": {
@@ -186,8 +186,8 @@
                 "-g",
                 "-Wall",
                 "-obuild/additional",
-                "additional/main.cpp",
-                "additional/Test.cpp"
+                "tutorial/additional/main.cpp",
+                "tutorial/additional/Test.cpp"
             ],
             "group": "build",
             "problemMatcher": {
