@@ -1,3 +1,5 @@
+# Ignore build directory
+build/
 *.exe
 
 # Ignore special Visual Studio Code files
