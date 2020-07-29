@@ -157,7 +157,9 @@
                 "inheritance/main.cpp",
                 "inheritance/Animal.cpp",
                 "inheritance/Cat.cpp",
-                "inheritance/Tiger.cpp"
+                "inheritance/Tiger.cpp",
+                "inheritance/Machine.cpp",
+                "inheritance/Vehicle.cpp"
             ],
             "group": "build",
             "problemMatcher": {
