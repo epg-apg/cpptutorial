@@ -20,3 +20,9 @@ add_executable("inheritance" "tutorial/inheritance/main.cpp" "tutorial/inheritan
 
 # Chapter 6
 add_executable("additional" "tutorial/additional/main.cpp" "tutorial/additional/Test.cpp")
+
+# Chapter 7
+find_package(SDL2 REQUIRED)
+include_directories(${SDL2_INCLUDE_DIRS})
+add_executable("particlefire" "tutorial/particlefire/main.cpp")
+target_link_libraries("particlefire" ${SDL2_LIBRARIES})
