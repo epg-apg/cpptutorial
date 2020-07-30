@@ -214,7 +214,10 @@
                 "-g",
                 "-Wall",
                 "-obuild/particlefire",
-                "tutorial/particlefire/main.cpp"
+                "tutorial/particlefire/main.cpp",
+                "-lmingw32",
+                "-lSDL2main",
+                "-lSDL2"
             ],
             "group": "build",
             "problemMatcher": {
