@@ -24,5 +24,5 @@ add_executable("additional" "tutorial/additional/main.cpp" "tutorial/additional/
 # Chapter 7
 find_package(SDL2 REQUIRED)
 include_directories(${SDL2_INCLUDE_DIRS})
-add_executable("particlefire" "tutorial/particlefire/main.cpp")
+add_executable("particlefire" "tutorial/particlefire/main.cpp" "tutorial/particlefire/Screen.cpp")
 target_link_libraries("particlefire" ${SDL2_LIBRARIES})
