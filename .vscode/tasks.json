@@ -238,8 +238,35 @@
             }
         },
         {
+            "label": "compile_bitshifting",
+            "type": "shell",
+            "command": "g++",
+            "args": [
+                "-g",
+                "-Wall",
+                "-obuild/bitshifting",
+                "tutorial/bitshifting/main.cpp",
+            ],
+            "group": "build",
+            "problemMatcher": {
+                "owner": "cpp",
+                "fileLocation": [
+                    "relative",
+                    "${workspaceFolder}"
+                ],
+                "pattern": {
+                    "regexp": "^(.*):(\\d+):(\\d+):\\s+(warning|error):\\s+(.*)$",
+                    "file": 1,
+                    "line": 2,
+                    "column": 3,
+                    "severity": 4,
+                    "message": 5
+                }
+            }
+        },
+        {
             "label": "build_all",
-            "dependsOn": ["default_build", "compile_syntax", "compile_functions", "compile_classes", "compile_pointer", "compile_inheritance", "compile_additional"]
+            "dependsOn": ["default_build", "compile_syntax", "compile_functions", "compile_classes", "compile_pointer", "compile_inheritance", "compile_additional", "compile_bitshifting"]
         }
     ]
 }

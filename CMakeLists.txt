@@ -26,3 +26,6 @@ find_package(SDL2 REQUIRED)
 include_directories(${SDL2_INCLUDE_DIRS})
 add_executable("particlefire" "tutorial/particlefire/main.cpp" "tutorial/particlefire/Screen.cpp")
 target_link_libraries("particlefire" ${SDL2_LIBRARIES})
+
+# Chapter 8
+add_executable("bitshifting" "tutorial/bitshifting/main.cpp")
