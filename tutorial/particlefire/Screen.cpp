@@ -41,17 +41,10 @@ bool Screen::init()
     mBuffer1 = new Uint32[SCREEN_WIDTH * SCREEN_HEIGHT];
     memset(mBuffer1, 123, SCREEN_WIDTH * SCREEN_HEIGHT * sizeof(Uint32));
 
-    mBuffer1[30000] = 0xFF000000;
-
     for (int i = 0; i < SCREEN_WIDTH * SCREEN_HEIGHT; ++i)
     {
-        mBuffer1[i] = 0xFFFF0000;
+        mBuffer1[i] = 0x00000000;
     }
-
-    SDL_UpdateTexture(mTexture, NULL, mBuffer1, SCREEN_WIDTH * sizeof(Uint32));
-    SDL_RenderClear(mRenderer);
-    SDL_RenderCopy(mRenderer, mTexture, NULL, NULL);
-    SDL_RenderPresent(mRenderer);
 
     return true;
 }
@@ -85,6 +78,31 @@ bool Screen::processEvents()
     }
 
     return true;
+}
+
+void Screen::update()
+{
+    SDL_UpdateTexture(mTexture, NULL, mBuffer1, SCREEN_WIDTH * sizeof(Uint32));
+    SDL_RenderClear(mRenderer);
+    SDL_RenderCopy(mRenderer, mTexture, NULL, NULL);
+    SDL_RenderPresent(mRenderer);
+}
+
+void Screen::setPixel(int x, int y, Uint8 red, Uint8 green, Uint8 blue)
+{    
+    Uint8 alpha = 0xFF;
+    Uint32 color = 0;
+
+    // example: 0x123456FF
+    color += red;   // 0x00000012
+    color <<= 8;    // 0x00001200
+    color += green; // 0x00001234
+    color <<= 8;    // 0x00123400
+    color += blue;  // 0x00123456
+    color <<= 8;    // 0x12345600
+    color += alpha; // 0x123456FF
+
+    mBuffer1[(y * SCREEN_WIDTH) + x] = color;
 }
 
 } // namespace mypgm
