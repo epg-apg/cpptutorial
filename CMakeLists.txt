@@ -31,3 +31,4 @@ configure_file("bin/SDL2.dll" "SDL2.dll" COPYONLY)
 
 # Chapter 8
 add_executable("bitshifting" "tutorial/bitshifting/main.cpp")
+add_executable("bitwise" "tutorial/bitwise/main.cpp")
