@@ -15,6 +15,8 @@ class Swarm
     Swarm(/* args */);
     ~Swarm();
 
+    void update();
+
     const Particle * const getParticles()
     {
         return mParticles;

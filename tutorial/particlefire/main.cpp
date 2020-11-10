@@ -23,11 +23,13 @@ int main(int argc, char *argv[])
     while (true)
     {
         int elapsed = SDL_GetTicks();
+        screen.clear();
+        mySwarm.update();
 
         // make milliseconds a bit smaller so sin returns a smoother transision -> * 0.001
-        unsigned char red = (unsigned char)((1 + std::sin(elapsed * 0.001)) * 128);
+        unsigned char red   = (unsigned char)((1 + std::sin(elapsed * 0.001)) * 128);
         unsigned char green = (unsigned char)((1 + std::sin(elapsed * 0.002)) * 128);
-        unsigned char blue = (unsigned char)((1 + std::sin(elapsed * 0.003)) * 128);
+        unsigned char blue  = (unsigned char)((1 + std::sin(elapsed * 0.003)) * 128);
 
         for (int y = 0; y < mypgm::Screen::SCREEN_HEIGHT; ++y)
         {
@@ -37,14 +39,15 @@ int main(int argc, char *argv[])
             }
         }
 
-        const mypgm::Particle * const tParticles = mySwarm.getParticles();
-        for (int i = 0; i < mypgm::Swarm::NPARTICLES; ++i) 
+        const mypgm::Particle *const tParticles = mySwarm.getParticles();
+        for (int i = 0; i < mypgm::Swarm::NPARTICLES; ++i)
         {
             mypgm::Particle tParticle = tParticles[i];
-            // particles are in a coordinate system from -1 to 1; add 1 to move it between 0 and 2 (no negatives)
-            // then multiple by half of screen width/height (2 times will be full witdh)
-            int x = (tParticle.mX + 1) * mypgm::Screen::SCREEN_WIDTH/2;
-            int y = (tParticle.mY + 1) * mypgm::Screen::SCREEN_HEIGHT/2;
+            // particles are in a coordinate system from -1 to 1; add 1 to move it between 0 and 2
+            // (no negatives) then multiple by half of screen width/height (2 times will be full
+            // witdh)
+            int x = (tParticle.mX + 1) * mypgm::Screen::SCREEN_WIDTH / 2;
+            int y = (tParticle.mY + 1) * mypgm::Screen::SCREEN_HEIGHT / 2;
 
             screen.setPixel(x, y, red, green, blue);
         }

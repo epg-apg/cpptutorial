@@ -88,6 +88,11 @@ void Screen::update()
     SDL_RenderPresent(mRenderer);
 }
 
+void Screen::clear()
+{
+    memset(mBuffer1, 0, SCREEN_WIDTH * SCREEN_HEIGHT * sizeof(Uint32));
+}
+
 void Screen::setPixel(int x, int y, Uint8 red, Uint8 green, Uint8 blue)
 {
     if (x < 0 || x >= SCREEN_WIDTH || y < 0 || y >= SCREEN_HEIGHT)
