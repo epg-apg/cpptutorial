@@ -1,32 +1,31 @@
 #include "Particle.h"
+#include <math.h>
+#include <stdlib.h>
+
+#ifndef M_PI 
+#define M_PI (3.14159265358979323846) 
+#endif 
 
 namespace mypgm
 {
 
-Particle::Particle()
+Particle::Particle(): mX(0), mY(0)
 {
-    mX = ((2.0 * rand()) / RAND_MAX) - 1;
-    mY = ((2.0 * rand()) / RAND_MAX) - 1;
+    mDirection = (2 * M_PI * rand())/RAND_MAX;
+    mSpeed = (0.0001 * rand())/RAND_MAX;
 }
 
 Particle::~Particle()
 {
 }
 
-void Particle::update()
+void Particle::update(int interval)
 {
-    mX += mXspeed;
-    mY += mYspeed;
+    double xSpeed = mSpeed * cos(mDirection);
+    double ySpeed = mSpeed * sin(mDirection);
 
-    if (mX < -1.0 || mX > 1.0)
-    {
-        mXspeed = -mXspeed;
-    }
-
-    if (mY < -1.0 || mY > 1.0)
-    {
-        mYspeed = -mYspeed;
-    }
+    mX += xSpeed * interval;
+    mY += ySpeed * interval;
 }
 
 } // namespace mypgm

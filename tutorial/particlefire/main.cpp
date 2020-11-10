@@ -24,12 +24,12 @@ int main(int argc, char *argv[])
     {
         int elapsed = SDL_GetTicks();
         screen.clear();
-        mySwarm.update();
+        mySwarm.update(elapsed);
 
         // make milliseconds a bit smaller so sin returns a smoother transision -> * 0.001
-        unsigned char red   = (unsigned char)((1 + std::sin(elapsed * 0.001)) * 128);
-        unsigned char green = (unsigned char)((1 + std::sin(elapsed * 0.002)) * 128);
-        unsigned char blue  = (unsigned char)((1 + std::sin(elapsed * 0.003)) * 128);
+        unsigned char red   = (unsigned char)((1 + std::sin(elapsed * 0.0001)) * 128);
+        unsigned char green = (unsigned char)((1 + std::sin(elapsed * 0.0002)) * 128);
+        unsigned char blue  = (unsigned char)((1 + std::sin(elapsed * 0.0003)) * 128);
 
         for (int y = 0; y < mypgm::Screen::SCREEN_HEIGHT; ++y)
         {
@@ -47,7 +47,7 @@ int main(int argc, char *argv[])
             // (no negatives) then multiple by half of screen width/height (2 times will be full
             // witdh)
             int x = (tParticle.mX + 1) * mypgm::Screen::SCREEN_WIDTH / 2;
-            int y = (tParticle.mY + 1) * mypgm::Screen::SCREEN_HEIGHT / 2;
+            int y = (tParticle.mY * mypgm::Screen::SCREEN_WIDTH / 2) + mypgm::Screen::SCREEN_HEIGHT / 2; // round instead of oval
 
             screen.setPixel(x, y, red, green, blue);
         }
