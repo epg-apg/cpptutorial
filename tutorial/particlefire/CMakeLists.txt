@@ -6,4 +6,4 @@ include_directories(${SDL2_INCLUDE_DIRS})
 add_executable("particlefire" "main.cpp" "Screen.cpp" "Particle.cpp" "Swarm.cpp")
 target_link_libraries("particlefire" ${SDL2_LIBRARIES})
 
-configure_file("../../resources/SDL2.dll" "SDL2.dll" COPYONLY)
+configure_file("../../resources/SDL2.dll" "${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/SDL2.dll" COPYONLY)
