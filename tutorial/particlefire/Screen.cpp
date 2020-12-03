@@ -10,6 +10,7 @@ Screen::Screen()
     , mRenderer(NULL)
     , mTexture(NULL)
     , mBuffer1(NULL)
+    , mBuffer2(NULL)
 {
 }
 
@@ -39,7 +40,10 @@ bool Screen::init()
                                  SCREEN_WIDTH, SCREEN_HEIGHT);
 
     mBuffer1 = new Uint32[SCREEN_WIDTH * SCREEN_HEIGHT];
-    memset(mBuffer1, 123, SCREEN_WIDTH * SCREEN_HEIGHT * sizeof(Uint32));
+    memset(mBuffer1, 0, SCREEN_WIDTH * SCREEN_HEIGHT * sizeof(Uint32));
+
+    mBuffer2 = new Uint32[SCREEN_WIDTH * SCREEN_HEIGHT];
+    memset(mBuffer2, 0, SCREEN_WIDTH * SCREEN_HEIGHT * sizeof(Uint32));
 
     for (int i = 0; i < SCREEN_WIDTH * SCREEN_HEIGHT; ++i)
     {
@@ -61,6 +65,7 @@ void Screen::close()
         SDL_DestroyWindow(mWindow);
 
     delete[] mBuffer1;
+    delete[] mBuffer2;
 
     SDL_Quit();
 }
@@ -91,6 +96,7 @@ void Screen::update()
 void Screen::clear()
 {
     memset(mBuffer1, 0, SCREEN_WIDTH * SCREEN_HEIGHT * sizeof(Uint32));
+    memset(mBuffer2, 0, SCREEN_WIDTH * SCREEN_HEIGHT * sizeof(Uint32));
 }
 
 void Screen::setPixel(int x, int y, Uint8 red, Uint8 green, Uint8 blue)
@@ -113,6 +119,60 @@ void Screen::setPixel(int x, int y, Uint8 red, Uint8 green, Uint8 blue)
     color += alpha; // 0x123456FF
 
     mBuffer1[(y * SCREEN_WIDTH) + x] = color;
+}
+
+void Screen::boxBlur()
+{
+    Uint32 *temp = mBuffer1;
+
+    mBuffer1 = mBuffer2;
+    mBuffer2 = temp;
+
+    for (int y = 0; y < SCREEN_HEIGHT; ++y)
+    {
+        for (int x = 0; x < SCREEN_WIDTH; ++x)
+        {
+            /*
+             * 0 0 0
+             * 0 1 0
+             * 0 0 0
+             */
+
+            int redTotal   = 0;
+            int greenTotal = 0;
+            int blueTotal  = 0;
+
+            // process all pixels around our pixel
+            for (int row = -1; row <= 1; ++row)
+            {
+                for (int col = -1; col <= 1; ++col)
+                {
+                    int currentX = x + col;
+                    int currentY = y + row;
+
+                    if (currentX >= 0 && currentX < SCREEN_WIDTH && currentY >= 0
+                        && currentY < SCREEN_HEIGHT)
+                    {
+                        Uint32 color = mBuffer2[currentY * SCREEN_WIDTH + currentX];
+
+                        Uint8 red = color >> 24; // see setPixel(), shift 3 bytes
+                        Uint8 green = color >> 16;
+                        Uint8 blue  = color >> 8;
+
+                        redTotal += red;
+                        greenTotal += green;
+                        blueTotal += blue;
+                    }
+                }
+            }
+
+            Uint8 red = redTotal / 9; // because of 9 pixel
+            Uint8 green = greenTotal / 9;
+            Uint8 blue = blueTotal / 9;
+
+            setPixel(x, y, red, green, blue);
+        }
+    }
 }
 
 } // namespace mypgm

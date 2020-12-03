@@ -23,7 +23,7 @@ int main(int argc, char *argv[])
     while (true)
     {
         int elapsed = SDL_GetTicks();
-        screen.clear();
+        //screen.clear();
         mySwarm.update(elapsed);
 
         // make milliseconds a bit smaller so sin returns a smoother transision -> * 0.001
@@ -52,6 +52,7 @@ int main(int argc, char *argv[])
             screen.setPixel(x, y, red, green, blue);
         }
 
+        screen.boxBlur();
         screen.update();
 
         if (screen.processEvents() == false)
