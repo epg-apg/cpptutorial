@@ -11,6 +11,8 @@ class Particle
   private:
     double mSpeed;
     double mDirection;
+
+    void init();
     
   public:
     Particle(/* args */);

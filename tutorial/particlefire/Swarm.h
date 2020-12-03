@@ -23,7 +23,7 @@ class Swarm
         return mParticles;
     }
 
-    const static int NPARTICLES = 1000;
+    const static int NPARTICLES = 2000;
 };
 
 } // namespace mypgm
