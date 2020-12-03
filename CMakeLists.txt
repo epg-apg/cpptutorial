@@ -29,3 +29,6 @@ add_subdirectory("tutorial/particlefire")
 # Chapter 8
 add_subdirectory("tutorial/bitwise")
 add_subdirectory("tutorial/bitshifting")
+
+# Chapter Bonus
+add_subdirectory("tutorial/postfix")
