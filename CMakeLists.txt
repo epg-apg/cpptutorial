@@ -32,3 +32,4 @@ add_subdirectory("tutorial/bitshifting")
 
 # Chapter Bonus
 add_subdirectory("tutorial/postfix")
+add_subdirectory("tutorial/polymorphism")
